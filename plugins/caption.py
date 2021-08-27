@@ -13,13 +13,12 @@ async def caption(client, message: Message):
     if (media is not None) and (not message.chat.id in CHANNELS):
         try:
             Msg = await message.edit("g")
-            
-            if (message.chat.id == -1001264182630):
-                try:
-                    await Msg.copy(chat_id=-1001448973320)
-                except Exception as error:
-                    print(error)
         except Exception as e:
             print(e)
+        if (message.chat.id == -1001264182630):
+            try:
+                await Msg.copy(chat_id=-1001448973320)
+            except Exception as error:
+                print(error)
 
 

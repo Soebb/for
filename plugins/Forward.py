@@ -7,8 +7,6 @@ async def autopost(bot, update):
     media = update.video or update.audio
     if (update.chat.id == -1001264182630):
         try:
-            if not "Ghermez" in media.file_name:
-                await update.copy(chat_id=-1001448973320)
-            
+            await update.copy(chat_id=-1001448973320)
         except Exception as error:
             print(error)

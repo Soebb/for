@@ -12,14 +12,12 @@ async def caption(client, message: Message):
     if (media is not None) and (not message.chat.id in CHANNELS):
         try:
             await message.edit("g")
+            if (message.chat.id == -1001264182630):
+                try:
+                    await message.copy(chat_id=-1001448973320)
+                except Exception as error:
+                    print(error)
         except Exception as e:
             print(e)
 
 
-async def autopost(bot, update):
-    media = update.document or update.audio
-    if (update.chat.id == -1001264182630):
-        try:
-            await update.copy(chat_id=-1001448973320)
-        except Exception as error:
-            print(error)

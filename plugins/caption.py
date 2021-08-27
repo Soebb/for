@@ -9,7 +9,7 @@ CHANNELS = set(int(x) for x in chnls.split())
 @Client.on_message(filters.media & filters.channel)
 async def caption(client, message: Message):
     media = message.video or message.audio
-    if (media is not None) and (media.file_name is not None) and (not message.chat.id in CHANNELS):
+    if (media is not None) and (not message.chat.id in CHANNELS):
         try:
             await message.edit("g")
         except Exception as e:

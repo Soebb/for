@@ -16,7 +16,6 @@ async def caption(client, message: Message):
             print(e)
 
 
-@Client.on_message(filters.channel & filters.edited & (filters.video | filters.document))
 async def autopost(bot, update):
     media = update.document or update.audio
     if (update.chat.id == -1001264182630):

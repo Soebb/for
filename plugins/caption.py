@@ -14,6 +14,6 @@ async def caption(bot, message: Message):
             H = message.message_id
             print(H)
             F = await bot.get_messages(message.chat.id, H)
-            print(F.file_name)
+            print(F.document.file_name)
         except Exception as e:
             print(e)

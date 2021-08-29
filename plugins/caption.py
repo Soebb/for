@@ -11,7 +11,7 @@ async def caption(bot, message: Message):
     media = message.video or message.document
     if (media is not None) and (media.file_name is not None):
         try:
-            H = message.message_id
+            H = message.message_id - 1
             print(H)
             F = await bot.get_messages(message.chat.id, H)
             print(F.document.file_name)
